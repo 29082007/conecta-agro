@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Currículos - Técnico em Agropecuária | Uruguaiana-RS</title>
+    <style>
+        /* --- ESTILOS GERAIS (CSS) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1b4d3e; /* Verde Agro */
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-size: 22px;
+        }
+        .logo span {
+            font-size: 14px;
+            display: block;
+            color: #a3e2c9;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #a3e2c9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* --- PÁGINA INICIAL (HERO) --- */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.85)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 { font-size: 36px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        .btn {
+            background-color: #e67e22; /* Laranja de destaque */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #d35400; }
+        .btn-secondary { background-color: transparent; border: 2px solid white; margin-left: 10px; }
+        .btn-secondary:hover { background-color: white; color: #1b4d3e; }
+
+        /* --- SEÇÕES DO SITE --- */
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #1b4d3e;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1b4d3e;
+            padding-bottom: 10px;
+        }
+
+        /* --- FORMULÁRIO DE CADASTRO --- */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        .form-row .form-group { flex: 1; }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"], input[type="number"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- ÁREA DE VAGAS --- */
+        .vagas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .vaga-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 6px;
+            background: #fafafa;
+            position: relative;
+        }
+        .vaga-card h3 { color: #e67e22; margin-bottom: 10px; }
+        .vaga-badge {
+            background: #1b4d3e;
+            color: white;
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .vaga-detalhes p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #113327;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO & MENU -->
+    <header>
+        <div class="logo">
+            <h1>AGRO-CURRÍCULOS</h1>
+            <span>Técnico em Agropecuária - Uruguaiana/RS</span>
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#cadastro">Cadastrar Currículo</a>
+            <a href="#vagas">Vagas Próximas</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- PÁGINA INICIAL / APRESENTAÇÃO -->
+        <section class="hero" id="inicio">
+            <h2>Conectando a Mão de Obra Técnica ao Campo</h2>
+            <p>Plataforma de integração para alunos do curso Técnico em Agropecuária de Uruguaiana e região. Cadastre seu currículo ou encontre talentos para sua propriedade rural.</p>
+            <div>
+                <a href="#cadastro" class="btn">Sou Aluno (Cadastrar)</a>
+                <a href="#vagas" class="btn btn-secondary">Ver Vagas de Emprego</a>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO DE CADASTRO DO ALUNO -->
+        <section class="section" id="cadastro">
+            <h2 class="section-title">Cadastro de Usuário (Aluno)</h2>
+            
+            <!-- Agora apontando para salvar.php usando o método POST -->
+            <form action="salvar.php" method="POST">
+                
+                <h3>Dados Pessoais</h3>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade</label>
+                        <input type="number" id="idade" name="idade" required placeholder="Ex: 18">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade Natal</label>
+                        <input type="text" id="cidade" name="cidade" required value="Uruguaiana/RS">
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 20px;">Dados Acadêmicos</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Curso</label>
+                        <input type="text" value="Técnico em Agropecuária" readonly style="background:#eee;">
+                    </div>
+                    <div class="form-group">
+                        <label for="escolaridade">Situação Atual</label>
+                        <select id="escolaridade" name="escolaridade">
+                            <option value="Cursando (Fase Inicial)">Cursando (Fase Inicial)</option>
+                            <option value="Cursando (Fase Final / Estágio)">Cursando (Fase Final / Estágio)</option>
+                            <option value="Formado / Técnico Concluído">Formado / Técnico Concluído</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ÁREAS DE ATUAÇÃO ESPECÍFICAS -->
+                <h3 style="margin-top: 20px;">Área(s) de Atuação</h3>
+                <p style="font-size:14px; color:#666; margin-bottom:10px;">Selecione as áreas em que você possui maior aptidão ou interesse:</p>
+                
+                <!-- O name="areas[]" cria uma lista automática com todas as opções marcadas -->
+                <div class="checkbox-grid">
+                    <div class="checkbox-item"><input type="checkbox" id="arroz" name="areas[]" value="Arroz"> <label for="arroz">Arroz</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="bovCorte" name="areas[]" value="Bovinocultura de Corte"> <label for="bovCorte">Bovinocultura de Corte</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="bovLeite" name="areas[]" value="Bovinocultura de Leite"> <label for="bovLeite">Bovinocultura de Leite</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="mecanizacao" name="areas[]" value="Mecanização Agrícola"> <label for="mecanizacao">Mecanização Agrícola</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="manejo" name="areas[]" value="Manejo de Gado"> <label for="manejo">Manejo de Gado</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="ambiental" name="areas[]" value="Licenciamento Ambiental"> <label for="ambiental">Licenciamento Ambiental</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="sementes" name="areas[]" value="Análise de Sementes"> <label for="sementes">Análise de Sementes</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="agroindustria" name="areas[]" value="Agroindústria"> <label for="agroindustria">Agroindústria</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="extensao" name="areas[]" value="Extensão Rural"> <label for="extensao">Extensão Rural</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="apicultura" name="areas[]" value="Apicultura"> <label for="apicultura">Apicultura</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="inseminacao" name="areas[]" value="Inseminação em Bovinos"> <label for="inseminacao">Inseminação em Bovinos</label></div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="outros">Outras Habilidades (Campo aberto)</label>
+                    <input type="text" id="outros" name="outros" placeholder="Ex: Informática agrária, operação de drones...">
+                </div>
+
+                <button type="submit" class="btn" style="margin-top: 20px; width: 100%;">Finalizar e Enviar Currículo</button>
+            </form>
+        </section>
+
+        <!-- ÁREA DE VAGAS -->
+        <section class="section" id="vagas">
+            <h2 class="section-title">Oportunidades e Vagas Recentes</h2>
+            <div class="vagas-grid">
+                <div class="vaga-card">
+                    <span class="vaga-badge">Estágio</span>
+                    <h3>Auxiliar de Manejo</h3>
+                    <div class="vaga-detalhes">
+                        <p><strong>Propriedade:</strong> Estância Bela Vista</p>
+                        <p><strong>Município:</strong> Uruguaiana / RS</p>
+                        <p><strong>Área:</strong> Bovinocultura de Corte e Manejo de Gado</p>
+                        <p><strong>Carga Horária:</strong> 40h Semanais</p>
+                        <p><strong>Remuneração:</strong> R$ 1.400,00 + Alojamento</p>
+                        <p style="margin-top:10px; font-size:13px; color:#666;">Contato: contato@belavistaagro.com</p>
+                    </div>
+                </div>
+                <div class="vaga-card">
+                    <span class="vaga-badge">Efetivo</span>
+                    <h3>Técnico em Lavoura de Arroz</h3>
+                    <div class="vaga-detalhes">
+                        <p><strong>Empresa:</strong> Grãos do Pampa Ltda</p>
+                        <p><strong>Município:</strong> Itaqui / Região Fronteira Oeste</p>
+                        <p><strong>Área:</strong> Arroz e Mecanização Agrícola</p>
+                        <p><strong>Carga Horária:</strong> Comercial</p>
+                        <p><strong>Remuneração:</strong> A combinar</p>
+                        <p style="margin-top:10px; font-size:13px; color:#666;">Contato: (55) 99999-1234</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Projeto Técnico em Agropecuária - Banco de Dados de Currículos.</p>
+        <p>Desenvolvido para conectar a comunidade estudantil às empresas rurais de Uruguaiana/RS.</p>
+    </footer>
+
+</body>
+</html>
